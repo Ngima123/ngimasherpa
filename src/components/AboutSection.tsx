@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { GraduationCap, Brain, Lightbulb, Music, Dumbbell, BookOpen } from "lucide-react";
 
 const AboutSection = () => {
@@ -71,18 +72,35 @@ const AboutSection = () => {
           {/* Introduction */}
           <Card className="bg-gradient-card border-border/50 shadow-card mb-12 hover:shadow-neon transition-all duration-300">
             <CardContent className="p-8">
-              <div className="text-center">
-                <p className="text-lg md:text-xl text-foreground leading-relaxed font-poppins mb-6">
-                  Hi, I'm <span className="text-primary font-semibold">Ngima Sherpa</span>, a 19-year-old AI journalist from 
-                  <span className="text-secondary font-semibold"> Aathrai Triveni Rural Municipality-4, Taplejung</span>.
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed font-poppins mb-6">
-                  Currently pursuing my Bachelor's in Business Studies (3rd Year) at Pathivara Multiple Campus.
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed font-poppins">
-                  I've been learning and experimenting with AI tools for the last 3 years through online workshops, 
-                  YouTube, books, and articles, constantly pushing the boundaries of what's possible with AI technology.
-                </p>
+              <div className="flex flex-col md:flex-row items-center gap-8">
+                {/* Profile Picture */}
+                <div className="flex-shrink-0">
+                  <Avatar className="w-32 h-32 md:w-40 md:h-40 border-4 border-gradient-primary shadow-neon">
+                    <AvatarImage 
+                      src="/lovable-uploads/1b61d419-858a-4b21-844e-3b0b9717b35c.png" 
+                      alt="Ngima Sherpa"
+                      className="object-cover"
+                    />
+                    <AvatarFallback className="bg-gradient-primary text-primary-foreground text-2xl font-poppins font-bold">
+                      NS
+                    </AvatarFallback>
+                  </Avatar>
+                </div>
+
+                {/* Text Content */}
+                <div className="text-center md:text-left flex-1">
+                  <p className="text-lg md:text-xl text-foreground leading-relaxed font-poppins mb-6">
+                    Hi, I'm <span className="text-primary font-semibold">Ngima Sherpa</span>, a 19-year-old AI journalist from 
+                    <span className="text-secondary font-semibold"> Aathrai Triveni Rural Municipality-4, Taplejung</span>.
+                  </p>
+                  <p className="text-lg text-muted-foreground leading-relaxed font-poppins mb-6">
+                    Currently pursuing my Bachelor's in Business Studies (3rd Year) at Pathivara Multiple Campus.
+                  </p>
+                  <p className="text-lg text-muted-foreground leading-relaxed font-poppins">
+                    I've been learning and experimenting with AI tools for the last 3 years through online workshops, 
+                    YouTube, books, and articles, constantly pushing the boundaries of what's possible with AI technology.
+                  </p>
+                </div>
               </div>
             </CardContent>
           </Card>
