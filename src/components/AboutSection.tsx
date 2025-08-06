@@ -39,6 +39,12 @@ const AboutSection = () => {
       year: "Current"
     },
     {
+      degree: "Computer Operator Course",
+      institution: "Professional Training Institute",
+      status: "6-Month Course - Completed",
+      year: "2080"
+    },
+    {
       degree: "+2 Completed",
       institution: "Kanchanjungha Secondary Boarding School",
       status: "Completed",
