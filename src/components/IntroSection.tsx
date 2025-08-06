@@ -1,16 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-
 const IntroSection = () => {
   const scrollToWork = () => {
     const portfolioSection = document.getElementById('portfolio');
     if (portfolioSection) {
-      portfolioSection.scrollIntoView({ behavior: 'smooth' });
+      portfolioSection.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <section className="h-screen flex items-center justify-center relative overflow-hidden bg-background">
+  return <section className="h-screen flex items-center justify-center relative overflow-hidden bg-background">
       {/* Dynamic Animated Background */}
       <div className="absolute inset-0">
         {/* Animated Gradient Background */}
@@ -19,18 +18,41 @@ const IntroSection = () => {
         {/* Floating Geometric Shapes */}
         <div className="absolute inset-0">
           {/* Large Floating Triangles */}
-          <div className="absolute top-1/4 left-1/6 w-32 h-32 border border-primary/20 rotate-45 animate-spin" style={{ animationDuration: '20s' }}></div>
-          <div className="absolute bottom-1/3 right-1/5 w-24 h-24 border border-accent/30 rotate-12 animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }}></div>
-          <div className="absolute top-2/3 left-2/3 w-16 h-16 border border-secondary/25 -rotate-45 animate-spin" style={{ animationDuration: '25s' }}></div>
+          <div className="absolute top-1/4 left-1/6 w-32 h-32 border border-primary/20 rotate-45 animate-spin" style={{
+          animationDuration: '20s'
+        }}></div>
+          <div className="absolute bottom-1/3 right-1/5 w-24 h-24 border border-accent/30 rotate-12 animate-spin" style={{
+          animationDuration: '15s',
+          animationDirection: 'reverse'
+        }}></div>
+          <div className="absolute top-2/3 left-2/3 w-16 h-16 border border-secondary/25 -rotate-45 animate-spin" style={{
+          animationDuration: '25s'
+        }}></div>
           
           {/* Hexagon Shapes */}
-          <div className="absolute top-1/2 left-1/12 w-20 h-20" style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)', background: 'linear-gradient(45deg, hsl(var(--primary)/0.1), hsl(var(--accent)/0.1))', animation: 'float 6s ease-in-out infinite' }}></div>
-          <div className="absolute bottom-1/4 right-1/3 w-14 h-14" style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)', background: 'linear-gradient(135deg, hsl(var(--secondary)/0.15), hsl(var(--primary)/0.1))', animation: 'float 8s ease-in-out infinite reverse' }}></div>
+          <div className="absolute top-1/2 left-1/12 w-20 h-20" style={{
+          clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
+          background: 'linear-gradient(45deg, hsl(var(--primary)/0.1), hsl(var(--accent)/0.1))',
+          animation: 'float 6s ease-in-out infinite'
+        }}></div>
+          <div className="absolute bottom-1/4 right-1/3 w-14 h-14" style={{
+          clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
+          background: 'linear-gradient(135deg, hsl(var(--secondary)/0.15), hsl(var(--primary)/0.1))',
+          animation: 'float 8s ease-in-out infinite reverse'
+        }}></div>
           
           {/* Animated Circles with Glow */}
-          <div className="absolute top-1/5 right-1/6 w-8 h-8 rounded-full bg-primary/20 animate-ping" style={{ animationDuration: '4s' }}></div>
-          <div className="absolute bottom-1/5 left-1/4 w-6 h-6 rounded-full bg-accent/25 animate-ping" style={{ animationDuration: '3s', animationDelay: '1s' }}></div>
-          <div className="absolute top-3/4 right-2/3 w-10 h-10 rounded-full bg-secondary/15 animate-ping" style={{ animationDuration: '5s', animationDelay: '2s' }}></div>
+          <div className="absolute top-1/5 right-1/6 w-8 h-8 rounded-full bg-primary/20 animate-ping" style={{
+          animationDuration: '4s'
+        }}></div>
+          <div className="absolute bottom-1/5 left-1/4 w-6 h-6 rounded-full bg-accent/25 animate-ping" style={{
+          animationDuration: '3s',
+          animationDelay: '1s'
+        }}></div>
+          <div className="absolute top-3/4 right-2/3 w-10 h-10 rounded-full bg-secondary/15 animate-ping" style={{
+          animationDuration: '5s',
+          animationDelay: '2s'
+        }}></div>
         </div>
 
         {/* Enhanced Neural Network with Animation */}
@@ -49,10 +71,10 @@ const IntroSection = () => {
             </linearGradient>
             
             <filter id="glow">
-              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feGaussianBlur stdDeviation="3" result="coloredBlur" />
               <feMerge> 
-                <feMergeNode in="coloredBlur"/>
-                <feMergeNode in="SourceGraphic"/>
+                <feMergeNode in="coloredBlur" />
+                <feMergeNode in="SourceGraphic" />
               </feMerge>
             </filter>
           </defs>
@@ -109,23 +131,38 @@ const IntroSection = () => {
 
         {/* Floating Energy Orbs */}
         <div className="absolute inset-0">
-          <div className="absolute top-1/6 left-1/3 w-4 h-4 rounded-full bg-primary/30 shadow-neon animate-bounce" style={{ animationDuration: '3s', animationDelay: '0s' }}></div>
-          <div className="absolute top-2/5 right-1/4 w-3 h-3 rounded-full bg-accent/40 shadow-neon-green animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }}></div>
-          <div className="absolute bottom-1/3 left-1/5 w-5 h-5 rounded-full bg-secondary/25 shadow-neon animate-bounce" style={{ animationDuration: '3.5s', animationDelay: '2s' }}></div>
-          <div className="absolute bottom-1/6 right-1/3 w-2 h-2 rounded-full bg-primary/50 shadow-neon animate-bounce" style={{ animationDuration: '4.5s', animationDelay: '3s' }}></div>
-          <div className="absolute top-3/5 left-3/4 w-3 h-3 rounded-full bg-accent/35 shadow-neon-green animate-bounce" style={{ animationDuration: '3.8s', animationDelay: '4s' }}></div>
+          <div className="absolute top-1/6 left-1/3 w-4 h-4 rounded-full bg-primary/30 shadow-neon animate-bounce" style={{
+          animationDuration: '3s',
+          animationDelay: '0s'
+        }}></div>
+          <div className="absolute top-2/5 right-1/4 w-3 h-3 rounded-full bg-accent/40 shadow-neon-green animate-bounce" style={{
+          animationDuration: '4s',
+          animationDelay: '1s'
+        }}></div>
+          <div className="absolute bottom-1/3 left-1/5 w-5 h-5 rounded-full bg-secondary/25 shadow-neon animate-bounce" style={{
+          animationDuration: '3.5s',
+          animationDelay: '2s'
+        }}></div>
+          <div className="absolute bottom-1/6 right-1/3 w-2 h-2 rounded-full bg-primary/50 shadow-neon animate-bounce" style={{
+          animationDuration: '4.5s',
+          animationDelay: '3s'
+        }}></div>
+          <div className="absolute top-3/5 left-3/4 w-3 h-3 rounded-full bg-accent/35 shadow-neon-green animate-bounce" style={{
+          animationDuration: '3.8s',
+          animationDelay: '4s'
+        }}></div>
         </div>
 
         {/* Dynamic Grid Pattern */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{ 
-            backgroundImage: `
+          <div className="absolute inset-0" style={{
+          backgroundImage: `
               linear-gradient(hsl(var(--primary)/0.3) 1px, transparent 1px),
               linear-gradient(90deg, hsl(var(--primary)/0.3) 1px, transparent 1px)
             `,
-            backgroundSize: '50px 50px',
-            animation: 'gridMove 10s linear infinite'
-          }}></div>
+          backgroundSize: '50px 50px',
+          animation: 'gridMove 10s linear infinite'
+        }}></div>
         </div>
 
         {/* Radial Gradient Overlay */}
@@ -142,9 +179,7 @@ const IntroSection = () => {
         </h1>
 
         {/* Subtitle */}
-        <h2 className="text-2xl md:text-4xl lg:text-5xl font-montserrat font-bold text-foreground mb-6 tracking-wide">
-          AI Generalist | Building the Future with Intelligence
-        </h2>
+        <h2 className="text-2xl md:text-4xl lg:text-5xl font-montserrat font-bold text-foreground mb-6 tracking-wide">AI website builder | Building the Future with Intelligence</h2>
 
         {/* Description */}
         <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground font-poppins font-light mb-12 max-w-3xl mx-auto leading-relaxed">
@@ -152,24 +187,16 @@ const IntroSection = () => {
         </p>
 
         {/* CTA Button */}
-        <Button 
-          size="lg"
-          className="font-poppins font-semibold px-12 py-6 text-xl bg-gradient-primary hover:shadow-neon transition-all duration-500 transform hover:scale-105 group"
-          onClick={scrollToWork}
-        >
+        <Button size="lg" className="font-poppins font-semibold px-12 py-6 text-xl bg-gradient-primary hover:shadow-neon transition-all duration-500 transform hover:scale-105 group" onClick={scrollToWork}>
           Explore My Work
           <ArrowRight className="ml-3 h-6 w-6 transition-transform duration-300 group-hover:translate-x-1" />
         </Button>
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-8 h-12 border-2 border-primary/60 rounded-full flex justify-center">
-            <div className="w-1.5 h-4 bg-primary rounded-full mt-3 animate-pulse"></div>
-          </div>
+          
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default IntroSection;
