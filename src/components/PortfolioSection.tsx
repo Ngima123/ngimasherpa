@@ -5,12 +5,12 @@ import { ExternalLink, Globe, Music, Video, FileText } from "lucide-react";
 const PortfolioSection = () => {
   const projects = [
     {
-      title: "Taplejung Mart",
+      title: "Tamu Furniture Showroom and Suppliers",
       category: "eCommerce Website",
-      description: "Complete AI-powered eCommerce platform with modern design and smart features",
+      description: "Complete furniture showroom website with modern design and inventory management",
       icon: Globe,
-      link: "#",
-      tech: ["AI Integration", "eCommerce", "Responsive Design"],
+      link: "https://tamufurnituretpj.odoo.com",
+      tech: ["Furniture Display", "eCommerce", "Inventory Management"],
       status: "Live"
     },
     {
@@ -18,45 +18,9 @@ const PortfolioSection = () => {
       category: "Educational Website",
       description: "School management system with modern interface",
       icon: Globe,
-      link: "https://buddhabasicschooltpj.odoo.com",
-      tech: ["School Management", "Odoo", "Web Development"],
+      link: "https://www.buddhabasic-school.edu.np",
+      tech: ["School Management", "Education", "Web Development"],
       status: "Live"
-    },
-    {
-      title: "Buddha Basic School Song",
-      category: "AI Music Creation",
-      description: "Custom AI-generated school anthem with meaningful lyrics",
-      icon: Music,
-      link: "#",
-      tech: ["AI Music", "Lyrics", "Audio Production"],
-      status: "Completed"
-    },
-    {
-      title: "Nepal Rastriya Basic School Song",
-      category: "AI Music Creation",
-      description: "Traditional yet modern school song created with AI assistance",
-      icon: Music,
-      link: "#",
-      tech: ["AI Music", "Traditional Elements", "School Anthem"],
-      status: "Completed"
-    },
-    {
-      title: "Gurukul Nepal Academy Song",
-      category: "AI Music Creation",
-      description: "Inspirational academy song blending education themes with music",
-      icon: Music,
-      link: "#",
-      tech: ["AI Music", "Educational Theme", "Composition"],
-      status: "Completed"
-    },
-    {
-      title: "Pathivara Multiple Campus Song",
-      category: "AI Music Creation",
-      description: "Campus anthem reflecting the spirit of higher education",
-      icon: Music,
-      link: "#",
-      tech: ["AI Music", "Campus Theme", "Original Composition"],
-      status: "Completed"
     },
     {
       title: "Taplejung Mart Marketing Video",
@@ -66,15 +30,6 @@ const PortfolioSection = () => {
       link: "#",
       tech: ["AI Video", "Marketing", "Visual Effects"],
       status: "Completed"
-    },
-    {
-      title: "Custom Birthday Songs",
-      category: "Personalized AI Music",
-      description: "Personalized birthday songs created for special occasions",
-      icon: Music,
-      link: "#",
-      tech: ["AI Music", "Personalization", "Custom Lyrics"],
-      status: "On Demand"
     }
   ];
 
