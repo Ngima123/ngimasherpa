@@ -157,10 +157,10 @@ const ContactSection = () => {
               </a>
               <a 
                 href="tel:+9779847262758"
-                className="flex items-center justify-center px-6 py-4 bg-gradient-secondary text-secondary-foreground font-poppins font-semibold rounded-lg hover:shadow-neon-green transition-all duration-300 transform hover:scale-105"
+                className="flex items-center justify-center px-6 py-4 bg-gradient-secondary hover:shadow-neon-green transition-all duration-300 transform hover:scale-105 text-black font-poppins font-semibold rounded-lg"
               >
-                <Phone className="mr-2 h-5 w-5" />
-                Call Now
+                <Phone className="mr-2 h-5 w-5 text-black" />
+                <span className="text-black">Call Now</span>
               </a>
             </div>
           </div>
