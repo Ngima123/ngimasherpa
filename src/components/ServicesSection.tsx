@@ -145,7 +145,7 @@ const ServicesSection = () => {
               </a>
               <a 
                 href="tel:+9779847262758" 
-                className="inline-flex items-center justify-center px-8 py-3 bg-gradient-secondary text-secondary-foreground font-poppins font-semibold rounded-lg hover:shadow-neon-green transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center justify-center px-8 py-3 bg-gradient-secondary font-poppins font-semibold rounded-lg hover:shadow-neon-green transition-all duration-300 transform hover:scale-105 text-black"
               >
                 📞 Call Now
               </a>
