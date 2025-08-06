@@ -42,7 +42,7 @@ const AboutSection = () => {
       degree: "Computer Operator Course",
       institution: "Professional Training Institute",
       status: "6-Month Course - Completed",
-      year: "2080"
+      year: "2082"
     },
     {
       degree: "+2 Completed",
