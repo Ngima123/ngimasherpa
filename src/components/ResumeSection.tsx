@@ -11,6 +11,27 @@ const ResumeSection = () => {
     const pageHeight = pdf.internal.pageSize.getHeight();
     let yPosition = 20;
 
+    // Add profile picture
+    try {
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.src = '/lovable-uploads/1b61d419-858a-4b21-844e-3b0b9717b35c.png';
+      
+      await new Promise((resolve, reject) => {
+        img.onload = resolve;
+        img.onerror = reject;
+      });
+      
+      // Add circular profile image
+      const imgSize = 30;
+      const imgX = pageWidth - 50;
+      const imgY = 15;
+      
+      pdf.addImage(img, 'PNG', imgX, imgY, imgSize, imgSize);
+    } catch (error) {
+      console.log('Could not load profile image for PDF');
+    }
+
     // Header
     pdf.setFontSize(24);
     pdf.setFont("helvetica", "bold");
@@ -36,7 +57,7 @@ const ResumeSection = () => {
     yPosition += 5;
     pdf.text("Phone: +977 9847262758", 20, yPosition);
     yPosition += 5;
-    pdf.text("Website: ngimasherpa.odoo.com", 20, yPosition);
+    pdf.text("Website: ngima-sherpa.com.np", 20, yPosition);
     yPosition += 5;
     pdf.text("Location: Aathrai Triveni Rural Municipality-4, Taplejung", 20, yPosition);
     yPosition += 15;
@@ -129,7 +150,7 @@ const ResumeSection = () => {
     // Footer
     pdf.setFontSize(8);
     pdf.setFont("helvetica", "italic");
-    pdf.text("Generated from ngimasherpa.odoo.com", pageWidth / 2, pageHeight - 10, { align: 'center' });
+    pdf.text("Generated from ngima-sherpa.com.np", pageWidth / 2, pageHeight - 10, { align: 'center' });
 
     // Save the PDF
     pdf.save('Ngima_Sherpa_Resume.pdf');
@@ -158,7 +179,7 @@ const ResumeSection = () => {
             <div class="contact">
               <p><strong>AI Journalist & Web Developer</strong></p>
               <p>Email: Reshamsherpa1@gmail.com | Phone: +977 9847262758</p>
-              <p>Website: ngimasherpa.odoo.com</p>
+              <p>Website: ngima-sherpa.com.np</p>
               <p>Location: Aathrai Triveni Rural Municipality-4, Taplejung</p>
             </div>
             
