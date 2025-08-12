@@ -23,8 +23,8 @@ const ResumeSection = () => {
       });
       
       // Add circular profile image
-      const imgSize = 30;
-      const imgX = pageWidth - 50;
+      const imgSize = 42;
+      const imgX = 20;
       const imgY = 15;
       
       pdf.addImage(img, 'PNG', imgX, imgY, imgSize, imgSize);
@@ -33,16 +33,21 @@ const ResumeSection = () => {
     }
 
     // Header
-    pdf.setFontSize(24);
+    pdf.setTextColor(37, 99, 235);
     pdf.setFont("helvetica", "bold");
-    pdf.text("Ngima Sherpa", pageWidth / 2, yPosition, { align: 'center' });
-    yPosition += 10;
-    
-    pdf.setFontSize(12);
+    pdf.setFontSize(22);
+    pdf.text("Ngima Sherpa", 70, 25);
+
+    pdf.setTextColor(0, 0, 0);
+    pdf.setFontSize(11);
     pdf.setFont("helvetica", "normal");
-    pdf.text("AI Journalist & Web Developer", pageWidth / 2, yPosition, { align: 'center' });
-    yPosition += 5;
-    pdf.text("Taplejung, Nepal", pageWidth / 2, yPosition, { align: 'center' });
+    pdf.text("AI Journalist & Web Developer", 70, 32);
+    pdf.text("Taplejung, Nepal", 70, 38);
+
+    // Divider
+    yPosition = 50;
+    pdf.setDrawColor(210, 210, 210);
+    pdf.line(20, yPosition, pageWidth - 20, yPosition);
     yPosition += 10;
 
     // Contact Information
@@ -187,71 +192,111 @@ const ResumeSection = () => {
           <head>
             <title>Portfolio Preview - Ngima Sherpa</title>
             <style>
-              body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
-              h1 { color: #2563eb; text-align: center; }
-              h2 { color: #1e40af; border-bottom: 2px solid #3b82f6; padding-bottom: 5px; }
-              .contact { text-align: center; margin: 20px 0; }
-              .skills, .projects, .services { margin: 20px 0; }
-              ul { list-style-type: none; padding: 0; }
-              li { margin: 5px 0; }
+              :root { --primary: #2563eb; --text:#111827; --muted:#6b7280; }
+              * { box-sizing: border-box; }
+              body { font-family: 'Inter', Arial, sans-serif; margin: 0; padding: 0; background: #f8fafc; color: var(--text); }
+              .page { width: 900px; margin: 24px auto; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(2,6,23,0.08); }
+              .header { background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%); color: #fff; padding: 28px 32px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+              .profile { display: flex; align-items: center; gap: 16px; }
+              .avatar { width: 72px; height: 72px; border-radius: 999px; object-fit: cover; border: 3px solid rgba(255,255,255,0.6); background: #e5e7eb; }
+              .name { font-size: 28px; font-weight: 800; letter-spacing: 0.2px; margin: 0; }
+              .role { margin: 2px 0 0; opacity: 0.95; font-weight: 600; }
+              .contact { text-align: right; font-size: 13px; line-height: 1.6; }
+              .contact a { color: #e0e7ff; text-decoration: none; }
+              .body { padding: 28px 32px; }
+              .grid { display: grid; grid-template-columns: 280px 1fr; gap: 24px; }
+              .section { margin-bottom: 20px; }
+              .section h2 { margin: 0 0 8px; font-size: 14px; color: var(--primary); text-transform: uppercase; letter-spacing: 0.08em; }
+              .card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; }
+              .list { margin: 0; padding-left: 18px; }
+              .list li { margin: 6px 0; color: var(--muted); }
+              .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+              .tag { display: inline-block; background: #eef2ff; color: #3730a3; padding: 6px 10px; border-radius: 999px; font-size: 12px; }
+              .item h3 { margin: 0 0 4px; font-size: 16px; }
+              .item p { margin: 0 0 6px; color: var(--muted); }
+              @media (max-width: 940px) { .page { width: calc(100% - 32px); } .grid { grid-template-columns: 1fr; } .contact { text-align: left; } }
             </style>
           </head>
           <body>
-            <h1>Ngima Sherpa</h1>
-            <div class="contact">
-              <p><strong>AI Journalist & Web Developer</strong></p>
-              <p>Email: Reshamsherpa1@gmail.com | Phone: +977 9847262758</p>
-              <p>Website: ngima-sherpa.com.np</p>
-              <p>Location: Aathrai Triveni Rural Municipality-4, Taplejung</p>
-            </div>
-            
-            <h2>Professional Summary</h2>
-            <p>Innovative AI Journalist and Web Developer with expertise in creating AI-powered solutions, educational content, and modern web applications. Passionate about leveraging technology to solve real-world problems and enhance digital experiences.</p>
-            
-            <h2>Skills & Expertise</h2>
-            <div class="skills">
-              <ul>
-                <li>• AI Journalism & Content Creation</li>
-                <li>• Web Development (React, TypeScript)</li>
-                <li>• AI Music & Video Production</li>
-                <li>• eCommerce Solutions</li>
-                <li>• Educational Technology</li>
-                <li>• Digital Marketing</li>
-                <li>• Project Management</li>
-              </ul>
-            </div>
-            
-            <h2>Education & Qualifications</h2>
-            <div class="education">
-              <ul>
-                <li>• Bachelor's in Business Studies — Pathivara Multiple Campus (3rd Year, Current)</li>
-                <li>• Computer Operator Course — Professional Training Institute (6-Month Course, 2082)</li>
-                <li>• +2 Completed — Kanchanjungha Secondary Boarding School (2079)</li>
-                <li>• SEE Completed — Maiwakhola Higher Secondary School (2076)</li>
-              </ul>
-            </div>
-            
-            <h2>Recent Projects</h2>
-            <div class="projects">
-              <h3>Tamu Furniture Showroom and Suppliers</h3>
-              <p>Complete furniture showroom website with modern design and inventory management</p>
-              <p><em>Technologies: eCommerce, Inventory Management, Responsive Design</em></p>
-              
-              <h3>Buddha Basic School Website</h3>
-              <p>School management system with modern interface and educational features</p>
-              <p><em>Technologies: School Management, Education, Web Development</em></p>
-            </div>
-            
-            <h2>Services Offered</h2>
-            <div class="services">
-              <ul>
-                <li>• AI-Powered Content Creation</li>
-                <li>• Custom Website Development</li>
-                <li>• eCommerce Solutions</li>
-                <li>• Educational Technology Consulting</li>
-                <li>• Digital Marketing Strategy</li>
-                <li>• SEO & Web Optimization</li>
-              </ul>
+            <div class="page">
+              <div class="header">
+                <div class="profile">
+                  <img class="avatar" src="/lovable-uploads/1b61d419-858a-4b21-844e-3b0b9717b35c.png" alt="Ngima Sherpa portrait" />
+                  <div>
+                    <h1 class="name">Ngima Sherpa</h1>
+                    <p class="role">AI Journalist & Web Developer</p>
+                  </div>
+                </div>
+                <div class="contact">
+                  <div>Aathrai Triveni Rural Municipality-4, Taplejung</div>
+                  <div>Email: Reshamsherpa1@gmail.com</div>
+                  <div>Phone: +977 9847262758</div>
+                  <div>Website: ngima-sherpa.com.np</div>
+                </div>
+              </div>
+
+              <div class="body">
+                <div class="grid">
+                  <aside>
+                    <div class="section card">
+                      <h2>Professional Summary</h2>
+                      <p>Innovative AI Journalist and Web Developer with expertise in creating AI-powered solutions, educational content, and modern web applications. Passionate about leveraging technology to solve real-world problems and enhance digital experiences.</p>
+                    </div>
+
+                    <div class="section card">
+                      <h2>Skills & Expertise</h2>
+                      <div class="tags">
+                        <span class="tag">AI Journalism</span>
+                        <span class="tag">Web Development</span>
+                        <span class="tag">React & TypeScript</span>
+                        <span class="tag">AI Music/Video</span>
+                        <span class="tag">eCommerce</span>
+                        <span class="tag">EdTech</span>
+                        <span class="tag">Digital Marketing</span>
+                        <span class="tag">Project Management</span>
+                      </div>
+                    </div>
+
+                    <div class="section card">
+                      <h2>Education & Qualifications</h2>
+                      <ul class="list">
+                        <li>Bachelor's in Business Studies — Pathivara Multiple Campus (3rd Year, Current)</li>
+                        <li>Computer Operator Course — Professional Training Institute (6-Month Course, 2082)</li>
+                        <li>+2 Completed — Kanchanjungha Secondary Boarding School (2079)</li>
+                        <li>SEE Completed — Maiwakhola Higher Secondary School (2076)</li>
+                      </ul>
+                    </div>
+                  </aside>
+
+                  <main>
+                    <div class="section card">
+                      <h2>Recent Projects</h2>
+                      <div class="item">
+                        <h3>Tamu Furniture Showroom and Suppliers</h3>
+                        <p>Complete furniture showroom website with modern design and inventory management.</p>
+                        <p><em>Technologies:</em> eCommerce, Inventory Management, Responsive Design</p>
+                      </div>
+                      <div class="item" style="margin-top:12px;">
+                        <h3>Buddha Basic School Website</h3>
+                        <p>School management system with modern interface and educational features.</p>
+                        <p><em>Technologies:</em> School Management, Education, Web Development</p>
+                      </div>
+                    </div>
+
+                    <div class="section card">
+                      <h2>Services Offered</h2>
+                      <ul class="list">
+                        <li>AI-Powered Content Creation</li>
+                        <li>Custom Website Development</li>
+                        <li>eCommerce Solutions</li>
+                        <li>Educational Technology Consulting</li>
+                        <li>Digital Marketing Strategy</li>
+                        <li>SEO & Web Optimization</li>
+                      </ul>
+                    </div>
+                  </main>
+                </div>
+              </div>
             </div>
           </body>
         </html>
