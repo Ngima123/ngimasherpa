@@ -55,13 +55,6 @@ const ContactSection = () => {
       color: "text-green-400"
     },
     {
-      icon: Youtube,
-      label: "YouTube",
-      value: "Taplejung Mart",
-      link: "https://youtube.com/@taplejungmart",
-      color: "text-red-400"
-    },
-    {
       icon: MapPin,
       label: "Location",
       value: "Aathrai Triveni Rural Municipality-4, Taplejung",
