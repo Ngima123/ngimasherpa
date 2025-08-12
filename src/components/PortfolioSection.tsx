@@ -30,6 +30,15 @@ const PortfolioSection = () => {
       link: "#",
       tech: ["AI Video", "Marketing", "Visual Effects"],
       status: "Completed"
+    },
+    {
+      title: "Ngima Sherpa Personal Website",
+      category: "Portfolio Website",
+      description: "My personal website with projects, resume, and contact details.",
+      icon: Globe,
+      link: "https://www.ngima-sherpa.com.np",
+      tech: ["Portfolio", "Branding", "Web Design"],
+      status: "Live"
     }
   ];
 
@@ -69,14 +78,15 @@ const PortfolioSection = () => {
           {projects.map((project, index) => {
             const IconComponent = project.icon;
             return (
-              <Card 
-                key={index} 
-                className="bg-card border-border/50 shadow-card hover:shadow-neon transition-all duration-300 transform hover:scale-105 group"
-              >
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center group-hover:animate-glow-pulse">
-                      <IconComponent className="h-6 w-6 text-primary-foreground" />
+               <Card
+                 key={index}
+                 className="bg-card/80 backdrop-blur border border-border/50 shadow-card hover:shadow-neon transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 group ring-1 ring-transparent hover:ring-primary/40 animate-fade-in"
+                 style={{ animationDelay: `${index * 100}ms` }}
+               >
+                 <CardHeader>
+                   <div className="flex items-center justify-between mb-4">
+                     <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center group-hover:animate-glow-pulse">
+                       <IconComponent className="h-6 w-6 text-primary-foreground" />
                     </div>
                     <span className={`px-3 py-1 rounded-full text-xs font-poppins font-medium ${getStatusColor(project.status)}`}>
                       {project.status}
@@ -112,6 +122,7 @@ const PortfolioSection = () => {
                       size="sm" 
                       className="w-full font-poppins border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                       onClick={() => window.open(project.link, '_blank')}
+                      aria-label={`View project: ${project.title}`}
                     >
                       <ExternalLink className="mr-2 h-4 w-4" />
                       View Project
