@@ -23,7 +23,7 @@ const PortfolioSection = () => {
       status: "Live"
     },
     {
-      title: "Taplejung Mart Marketing Video",
+      title: "Marketing Video",
       category: "AI Video Production",
       description: "Engaging promotional video showcasing eCommerce platform features",
       icon: Video,
