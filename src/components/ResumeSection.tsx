@@ -99,6 +99,28 @@ const ResumeSection = () => {
     });
     yPosition += 10;
 
+    // Education & Qualifications
+    pdf.setFontSize(14);
+    pdf.setFont("helvetica", "bold");
+    pdf.text("Education & Qualifications", 20, yPosition);
+    yPosition += 8;
+
+    pdf.setFontSize(10);
+    pdf.setFont("helvetica", "normal");
+    const education = [
+      { degree: "Bachelor's in Business Studies", institution: "Pathivara Multiple Campus", status: "3rd Year (Ongoing)", year: "Current" },
+      { degree: "Computer Operator Course", institution: "Professional Training Institute", status: "6-Month Course - Completed", year: "2082" },
+      { degree: "+2 Completed", institution: "Kanchanjungha Secondary Boarding School", status: "Completed", year: "2079" },
+      { degree: "SEE Completed", institution: "Maiwakhola Higher Secondary School", status: "Completed", year: "2076" }
+    ];
+    education.forEach(item => {
+      const line = `• ${item.degree} - ${item.institution} (${item.status}, ${item.year})`;
+      const lines = pdf.splitTextToSize(line, pageWidth - 40);
+      pdf.text(lines, 20, yPosition);
+      yPosition += lines.length * 5 + 2;
+    });
+    yPosition += 8;
+
     // Recent Projects
     pdf.setFontSize(14);
     pdf.setFont("helvetica", "bold");
@@ -153,7 +175,7 @@ const ResumeSection = () => {
     pdf.text("Generated from ngima-sherpa.com.np", pageWidth / 2, pageHeight - 10, { align: 'center' });
 
     // Save the PDF
-    pdf.save('Ngima_Sherpa_Resume.pdf');
+    pdf.save('Ngima_Sherpa_Portfolio.pdf');
   };
 
   const previewResume = () => {
@@ -163,7 +185,7 @@ const ResumeSection = () => {
       previewWindow.document.write(`
         <html>
           <head>
-            <title>Resume Preview - Ngima Sherpa</title>
+            <title>Portfolio Preview - Ngima Sherpa</title>
             <style>
               body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
               h1 { color: #2563eb; text-align: center; }
@@ -196,6 +218,16 @@ const ResumeSection = () => {
                 <li>• Educational Technology</li>
                 <li>• Digital Marketing</li>
                 <li>• Project Management</li>
+              </ul>
+            </div>
+            
+            <h2>Education & Qualifications</h2>
+            <div class="education">
+              <ul>
+                <li>• Bachelor's in Business Studies — Pathivara Multiple Campus (3rd Year, Current)</li>
+                <li>• Computer Operator Course — Professional Training Institute (6-Month Course, 2082)</li>
+                <li>• +2 Completed — Kanchanjungha Secondary Boarding School (2079)</li>
+                <li>• SEE Completed — Maiwakhola Higher Secondary School (2076)</li>
               </ul>
             </div>
             
@@ -238,11 +270,11 @@ const ResumeSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-poppins font-bold bg-gradient-primary bg-clip-text text-transparent mb-4">
-            Resume
+            Portfolio (PDF)
           </h2>
           <div className="w-24 h-1 bg-gradient-primary mx-auto mb-8"></div>
           <p className="text-xl text-muted-foreground font-poppins max-w-2xl mx-auto">
-            📄 Download my latest resume to learn more about my experience and qualifications
+            📄 Download my professional portfolio (PDF) with qualifications, projects, and contact info
           </p>
         </div>
 
@@ -254,7 +286,7 @@ const ResumeSection = () => {
               </div>
               
               <h3 className="text-2xl font-poppins font-bold text-foreground mb-4">
-                Professional Resume
+                Professional Portfolio (PDF)
               </h3>
               
               <p className="text-lg text-muted-foreground font-poppins mb-8 leading-relaxed">
@@ -265,7 +297,7 @@ const ResumeSection = () => {
               <div className="space-y-4">
                 <div className="bg-muted rounded-lg p-6">
                   <h4 className="text-lg font-poppins font-semibold text-foreground mb-3">
-                    What's included in my resume:
+                    What's included in my portfolio:
                   </h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm font-poppins text-muted-foreground">
                     <div className="flex items-center">
@@ -302,7 +334,7 @@ const ResumeSection = () => {
                     onClick={generatePDF}
                   >
                     <Download className="mr-2 h-5 w-5" />
-                    Download PDF Resume
+                    Download PDF Portfolio
                   </Button>
                   
                   <Button 
@@ -312,7 +344,7 @@ const ResumeSection = () => {
                     onClick={previewResume}
                   >
                     <Eye className="mr-2 h-5 w-5" />
-                    Preview Resume
+                    Preview Portfolio
                   </Button>
                 </div>
 
