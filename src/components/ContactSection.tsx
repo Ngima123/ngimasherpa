@@ -55,13 +55,6 @@ const ContactSection = () => {
       color: "text-green-400"
     },
     {
-      icon: Globe,
-      label: "Website",
-      value: "ngimasherpa.odoo.com",
-      link: "https://ngimasherpa.odoo.com",
-      color: "text-purple-400"
-    },
-    {
       icon: Youtube,
       label: "YouTube",
       value: "Taplejung Mart",
